@@ -3,6 +3,16 @@ import { useState } from 'react'
 
 import './App.css'
 
+function Modal() {
+  return (
+    <div className="modal">
+      <h2>제목</h2>
+      <p>날짜</p>
+      <p>상세내용</p>
+    </div>
+  )
+}
+
 function App() {
   const [글제목, 글제목변경] = useState([
     '남자 코트 추천',
@@ -57,6 +67,8 @@ function App() {
         <p>2월 17일 발행</p>
         <hr />
       </div>
+
+      <Modal />
 
       {/* {글제목.map((title) => {
         return (
