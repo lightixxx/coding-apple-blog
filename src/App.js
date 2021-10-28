@@ -21,6 +21,7 @@ function App() {
   ])
 
   const [따봉, 따봉변경] = useState(0)
+  const [modal, modal변경] = useState(false)
 
   function 제목바꾸기() {
     const newArray = [...글제목]
@@ -60,7 +61,11 @@ function App() {
         <hr />
       </div>
       <div className="list">
-        <h3>
+        <h3
+          onClick={() => {
+            modal변경(true)
+          }}
+        >
           {글제목[2]}
           <span onClick={() => {}}>👍</span> 0
         </h3>
@@ -68,7 +73,7 @@ function App() {
         <hr />
       </div>
 
-      <Modal />
+      {modal === true ? <Modal /> : null}
 
       {/* {글제목.map((title) => {
         return (
