@@ -29,6 +29,10 @@ function App() {
     글제목변경(newArray)
   }
 
+  // function 모달바꾸기() {
+  //   const a
+  // }
+
   return (
     <div className="App">
       <div className="black-nav">
@@ -72,6 +76,14 @@ function App() {
         <p>2월 17일 발행</p>
         <hr />
       </div>
+
+      <button
+        onClick={() => {
+          modal변경(!modal)
+        }}
+      >
+        모달 열기 버튼
+      </button>
 
       {modal === true ? <Modal /> : null}
 
