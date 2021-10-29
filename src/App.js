@@ -29,10 +29,6 @@ function App() {
     글제목변경(newArray)
   }
 
-  // function 모달바꾸기() {
-  //   const a
-  // }
-
   return (
     <div className="App">
       <div className="black-nav">
@@ -40,42 +36,6 @@ function App() {
       </div>
 
       <button onClick={제목바꾸기}>버튼</button>
-
-      <div className="list">
-        <h3>
-          {글제목[0]}
-          <span
-            onClick={() => {
-              따봉변경(따봉 + 1)
-            }}
-          >
-            👍
-          </span>{' '}
-          {따봉}
-        </h3>
-        <p>2월 17일 발행</p>
-        <hr />
-      </div>
-      <div className="list">
-        <h3>
-          {글제목[1]}
-          <span onClick={() => {}}>👍</span> 0
-        </h3>
-        <p>2월 17일 발행</p>
-        <hr />
-      </div>
-      <div className="list">
-        <h3
-          onClick={() => {
-            modal변경(true)
-          }}
-        >
-          {글제목[2]}
-          <span onClick={() => {}}>👍</span> 0
-        </h3>
-        <p>2월 17일 발행</p>
-        <hr />
-      </div>
 
       <button
         onClick={() => {
@@ -87,18 +47,27 @@ function App() {
 
       {modal === true ? <Modal /> : null}
 
-      {/* {글제목.map((title) => {
+      {글제목.map((title, i) => {
+        console.log(따봉)
+
         return (
           <div className="list">
             <h3>
               {title}
-              <span>👍</span> 0
+              <span
+                onClick={() => {
+                  따봉변경(따봉 + 1)
+                }}
+              >
+                👍
+              </span>
+              {따봉}
             </h3>
-
             <p>2월 17일 발행</p>
+            <hr />
           </div>
         )
-      })} */}
+      })}
     </div>
   )
 }
