@@ -3,10 +3,10 @@ import { useState } from 'react'
 
 import './App.css'
 
-function Modal() {
+function Modal(props) {
   return (
     <div className="modal">
-      <h2>제목</h2>
+      <h2>{props.글제목[0]}</h2>
       <p>날짜</p>
       <p>상세내용</p>
     </div>
@@ -45,11 +45,9 @@ function App() {
         모달 열기 버튼
       </button>
 
-      {modal === true ? <Modal /> : null}
+      {modal === true ? <Modal 글제목={글제목} /> : null}
 
       {글제목.map((title, i) => {
-        console.log(따봉)
-
         return (
           <div className="list">
             <h3>
