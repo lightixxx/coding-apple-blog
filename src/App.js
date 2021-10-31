@@ -23,6 +23,7 @@ function App() {
   const [따봉, 따봉변경] = useState(0)
   const [modal, modal변경] = useState(false)
   const [누른제목, 누른제목변경] = useState(0)
+  const [입력값, 입력값변경] = useState('')
 
   function 제목바꾸기() {
     const newArray = [...글제목]
@@ -60,6 +61,12 @@ function App() {
         버튼3
       </button> */}
 
+      {/* <input
+        onChange={(e) => {
+          입력값변경(e.target.value)
+        }}
+      /> */}
+
       <button
         onClick={() => {
           modal변경(!modal)
@@ -72,7 +79,7 @@ function App() {
 
       {글제목.map((title, i) => {
         return (
-          <div className="list">
+          <div className="list" key={i}>
             <h3
               onClick={() => {
                 누른제목변경(i)
