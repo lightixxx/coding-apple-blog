@@ -31,6 +31,12 @@ function App() {
     글제목변경(newArray)
   }
 
+  function 제목추가(title) {
+    const newArray = [...글제목]
+    newArray.unshift(title)
+    글제목변경(newArray)
+  }
+
   return (
     <div className="App">
       <div className="black-nav">
@@ -100,6 +106,21 @@ function App() {
           </div>
         )
       })}
+
+      <div className="publish">
+        <input
+          onChange={(e) => {
+            입력값변경(e.target.value)
+          }}
+        />
+        <button
+          onClick={() => {
+            제목추가(입력값)
+          }}
+        >
+          저장
+        </button>
+      </div>
     </div>
   )
 }
