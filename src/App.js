@@ -1,7 +1,30 @@
 // eslint-disable
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 import './App.css'
+
+class Profile extends React.Component {
+  constructor() {
+    super()
+    this.state = { name: 'Lightixxx', age: 29 }
+  }
+
+  changeName = () => {
+    this.setState({ name: '이귱' })
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>프로필입니다.</h3>
+        <p>
+          저는 <strong>{this.state.name}</strong> 입니다.
+        </p>
+        <button onClick={this.changeName}>이름변경</button>
+      </div>
+    )
+  }
+}
 
 function Modal(props) {
   return (
@@ -43,6 +66,7 @@ function App() {
         <div>개발 Blog</div>
       </div>
 
+      <Profile />
       <button onClick={제목바꾸기}>버튼</button>
 
       {/* <button
